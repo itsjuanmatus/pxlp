@@ -50,7 +50,7 @@ const Home: NextPage = () => {
         {
           dropdownData && dropdownData.map((e: any) => {
             return (
-              <Accordion title={e.title} description={e.description} />
+              <Accordion title={e.title} description={e.description} key="title"/>
             )
           })
         }
