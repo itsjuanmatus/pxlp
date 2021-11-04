@@ -12,7 +12,7 @@ export default function Accordion({ title, description }: any) {
                     <p className="text-lg font-semibold max-w-xs md:max-w-full w-full">{title}</p>
 
                     <svg xmlns="http://www.w3.org/2000/svg"
-                        className="h-7 w-7 toggle transform duration-500 rotate-45 stroke-current text-indigo-600 "
+                        className="h-7 w-7 toggle transform duration-1000 rotate-45 stroke-current text-indigo-600 "
                         fill="none" viewBox="0 0 24 24"
                         stroke="currentColor"
                         aria-expanded={isOpen}>
@@ -20,8 +20,8 @@ export default function Accordion({ title, description }: any) {
                     </svg>
                 </div>
 
-                <div className={`overflow-hidden accordion-content transform duration-500 ${isOpen ? 'mt-4' : ''}`} aria-expanded={!isOpen}>
-                    <p className="text-gray-700 md:pr-24">
+                <div className={`overflow-hidden accordion-content  `} aria-expanded={!isOpen}>
+                    <p className="text-gray-700 md:pr-24 mt-4">
                         {description}
 
                     </p>
