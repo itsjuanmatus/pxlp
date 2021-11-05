@@ -57,9 +57,9 @@ export default function Carousel() {
             style={{ top: '40%' }}
         >
             <span role="img" aria-label={`Arrow ${isLeft ? 'left' : 'right'}`}>
-                {isLeft ? <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 rounded-full border border-gray-500 p-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                {isLeft ? <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 rounded-full border border-gray-500 p-3 stroke-current hover:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                </svg> : <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 rounded-full border border-gray-500 p-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                </svg> : <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 rounded-full border border-gray-500 p-3 stroke-current hover:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                 </svg>}
             </span>
@@ -97,8 +97,9 @@ export default function Carousel() {
                         {sliderControl()}
                     </div>
                     <div className="p-12 flex justify-between w-screen  md:w-full items-center">
-                        <div className="flex items-center justify-between w-full">
-                            <div className="w-96 m-auto">
+                        <div className="flex items-center justify-between w-full banner">
+                            <div className="w-96 m-auto relative z-30 flex items-center ">
+
                                 <div className="carousel">
                                     {images.map((img, i) => (
                                         <div className="w-full flex-shrink-0 z-10 " key={img} ref={refs[i]}>

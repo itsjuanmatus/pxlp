@@ -27,3 +27,12 @@
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
+
+.banner {
+  background-image: url('../public/ellipse.png');
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin: 0;
+}
