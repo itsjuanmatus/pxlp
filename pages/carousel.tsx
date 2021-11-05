@@ -77,7 +77,7 @@ export default function Carousel() {
 
                 <h2 className="text-white text-2xl md:text-4xl m-auto">All-digital banking</h2>
 
-                <div className={`hidden md:grid grid-cols-${titles.length} gap-x-10 m-auto py-5`}>
+                <div className={`hidden md:inline-flex space-x-10 m-auto py-5`}>
                     {titles && titles.map((e: any) => (
                         <button key={e} type="button"
                             onClick={() => scrollToImage(titles.indexOf(e))}
