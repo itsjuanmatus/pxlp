@@ -1,9 +1,9 @@
 import React, { useState, createRef } from 'react'
 const images = [
     '/iphone1.png',
-    '/iphone1.png',
-    '/iphone1.png',
-    '/iphone1.png',
+    '/squirtle.png',
+    '/pikachu.png',
+    '/charizard.png',
 ]
 
 import img from '../public/Ellipse.png'
@@ -103,7 +103,7 @@ export default function Carousel() {
                             <div className="w-96 m-auto z-30 flex items-center">
                                 <div className="carousel">
                                     {images.map((img, i) => (
-                                        <div className="w-full flex-shrink-0 z-10 " key={img} ref={refs[i]}>
+                                        <div className="w-full flex-shrink-0 z-10 trannsform duration-500 translate-x-full" key={img} ref={refs[i]}>
                                             <img src={img} className="w-full object-contain" />
                                         </div>
                                     ))}
