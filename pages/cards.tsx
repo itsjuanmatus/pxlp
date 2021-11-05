@@ -30,7 +30,7 @@ export default function Cards() {
 
                     <div className='inline-flex justify-between items-center pt-5'>
                         <div className="m-0 grid w-full place-content-center" >
-                            <div className="flex justify-between w-full cursor-pointer accordion items-center" onClick={() => setIsOpen(!isOpen)}>
+                            <div className="flex justify-between w-full cursor-pointer accordion items-center gap-x-27" onClick={() => setIsOpen(!isOpen)}>
                                 <p className="text-lg font-semibold max-w-xs md:max-w-full w-full text-gray-300">What is included</p>
 
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,9 @@ export default function Cards() {
 
                             <div className={`overflow-hidden accordion-content  `} aria-expanded={!isOpen}>
                                 <p className="text-gray-300 font-light pr-16 md:pr-24 mt-4">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit reiciendis itaque, possimus facere voluptate, consequuntur cupiditate expedita officiis exercitationem illum sunt numquam. Eveniet assumenda est doloremque maiores exercitationem, totam deserunt!
+<span>
+    
+</span>
 
                                 </p>
                             </div>

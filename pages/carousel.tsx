@@ -53,12 +53,10 @@ export default function Carousel() {
 
     const sliderControl = (isLeft?: Boolean) => (
         <button
-            type="button"
             onClick={isLeft ? previousImage : nextImage}
             className={`${arrowStyle} ${isLeft ? 'left-2' : 'right-2'} `}
-            style={{ top: '40%' }}
         >
-            <span role="img" aria-label={`Arrow ${isLeft ? 'left' : 'right'}`}>
+            <span role="img" aria-label={` ${isLeft ? 'left' : 'right'}`}>
                 {isLeft ? <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 rounded-full border border-gray-500 p-3 stroke-current hover:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
                 </svg> : <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 rounded-full border border-gray-500 p-3 stroke-current hover:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
