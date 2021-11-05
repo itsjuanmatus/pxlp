@@ -31,7 +31,7 @@ export default function Cards() {
                     <div className='inline-flex justify-between items-center pt-5'>
                         <div className="m-0 grid w-full place-content-center" >
                             <div className="flex justify-between w-full cursor-pointer accordion items-center" onClick={() => setIsOpen(!isOpen)}>
-                                <p className="text-lg font-semibold max-w-xs md:max-w-full w-full text-gray-300">What's included</p>
+                                <p className="text-lg font-semibold max-w-xs md:max-w-full w-full text-gray-300">What is included</p>
 
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     className="h-7 w-7 toggle transform duration-1000 rotate-45 stroke-current text-white "
