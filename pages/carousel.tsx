@@ -6,6 +6,8 @@ const images = [
     '/iphone1.png',
 ]
 
+import img from '../public/Ellipse.png'
+
 export default function Carousel() {
     // index of current image in state
     const [currentImage, setCurrentImage] = useState(0)
@@ -97,9 +99,8 @@ export default function Carousel() {
                         {sliderControl()}
                     </div>
                     <div className="p-12 flex justify-between w-screen  md:w-full items-center">
-                        <div className="flex items-center justify-between w-full banner">
-                            <div className="w-96 m-auto relative z-30 flex items-center ">
-
+                        <div className="flex items-center justify-between w-full relative banner" >
+                            <div className="w-96 m-auto z-30 flex items-center">
                                 <div className="carousel">
                                     {images.map((img, i) => (
                                         <div className="w-full flex-shrink-0 z-10 " key={img} ref={refs[i]}>
