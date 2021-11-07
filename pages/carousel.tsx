@@ -22,12 +22,7 @@ export default function Carousel() {
 
     const scrollToImage = (i: any) => {
         setCurrentImage(i)
-
-        refs[i].current.scrollIntoView({
-            behavior: 'smooth',
-            block: 'nearest',
-            inline: 'start'
-        })
+        refs[i].current.scrollIntoView({behavior: "smooth", block: "start", inline: "nearest"})
     }
 
     const totalImages = images.length;
@@ -75,7 +70,9 @@ export default function Carousel() {
         <div className="flex justify-center items-start bg-truegray-900 min-h-screen w-full overflow-hidden">
             <div className="grid justify-items-center w-full mt-10">
 
-                <h2 className="text-white text-2xl md:text-4xl m-auto">All-digital banking</h2>
+                <h2 className="text-white text-2xl md:text-4xl m-auto " >All-digital banking
+                </h2>
+
 
                 <div className={`hidden md:inline-flex space-x-10 m-auto py-5`}>
                     {titles && titles.map((e: any) => (
@@ -102,6 +99,7 @@ export default function Carousel() {
                                 <div className="carousel">
                                     {images.map((img, i) => (
                                         <div className="w-full flex-shrink-0 z-10 trannsform duration-500 translate-x-full" key={img} ref={refs[i]}>
+                                            
                                             <img src={img} className="w-full object-contain" />
                                         </div>
                                     ))}
