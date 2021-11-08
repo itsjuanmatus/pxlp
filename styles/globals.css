@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+
+.kids-font {
+  font-family: 'Butterfly Kids', cursive;
+}
+
 
 .accordion svg.toggle[aria-expanded="true"] {
   transform: rotateZ(90deg);
