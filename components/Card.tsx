@@ -26,15 +26,15 @@ export default function Card({
     const size = useWindowSize();
 
     return (
-        <div className={`bg-${backgroundColor} shadow-sm grid w-full py-6 px-10 rounded-3xl max-w-sm`}>
+        <div className={`${backgroundColor} shadow-sm grid w-full py-6 px-10 rounded-3xl max-w-sm`}>
             <div className="flex justify-end">
-                <span className={`bg-${tagColor} py-1 px-4 max-w-max w-full rounded-3xl text-sm font-semibold max-h-8 inline-flex items-center`}>{tag}</span>
+                <span className={`${tagColor} py-1 px-4 max-w-max w-full rounded-3xl text-sm font-semibold max-h-8 inline-flex items-center`}>{tag}</span>
             </div>
             <div className="grid space-y-4 pt-3 pb-10">
-                <h2 className={`text-3xl text-${titleColor} font-medium`}>{title}</h2>
-                <p className={`text-${textColor} font-light`}>{price}</p>
-                <p className={`text-${textColor} font-light pr-16 md:pr-0 `}>{description}</p>
-                <button className={`bg-${buttonBackground} text-${buttonTextColor} max-w-max md:max-w-full px-6 py-3 rounded-3xl text-sm`}>
+                <h2 className={`text-3xl ${titleColor} font-medium`}>{title}</h2>
+                <p className={`${textColor} font-light`}>{price}</p>
+                <p className={`${textColor} font-light pr-16 md:pr-0 `}>{description}</p>
+                <button className={`${buttonBackground} ${buttonTextColor} max-w-max md:max-w-full px-6 py-3 rounded-3xl text-sm`}>
                     {button}
                 </button>
 
@@ -45,10 +45,10 @@ export default function Card({
             <div className='inline-flex justify-between items-center pt-5'>
                 <div className="m-0 grid w-full place-content-center" >
                     <div className="flex justify-between w-full cursor-pointer accordion items-center space-x-24 md:hidden" onClick={() => setIsOpen(!isOpen)}>
-                        <p className={`text-lg font-semibold max-w-xs md:max-w-max w-full text-${dropdownTitleColor}`}>{dropdownTitle}</p>
+                        <p className={`text-lg font-semibold max-w-xs md:max-w-max w-full ${dropdownTitleColor}`}>{dropdownTitle}</p>
                         <div>
                             <svg xmlns="http://www.w3.org/2000/svg"
-                                className={`h-7 w-7 toggle transform duration-1000 rotate-45 stroke-current text-${dropdownTitleColor}`}
+                                className={`h-7 w-7 toggle transform duration-1000 rotate-45 stroke-current ${dropdownTitleColor}`}
                                 fill="none" viewBox="0 0 24 24"
                                 stroke="currentColor"
                                 aria-expanded={isOpen}>

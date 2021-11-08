@@ -20,19 +20,19 @@ export default function Cards() {
                     </div>
                    <div className="mt-10 md:mt-0 grid place-content-center gap-y-5 md:inline-flex md:space-x-5 w-full justify-center">
                    <Card 
-                    backgroundColor  = 'purple-700 border border-gray-200 shadow-sm'
+                    backgroundColor  = 'bg-purple-700 border border-gray-200 shadow-sm'
                     tagColor = 'white text-black'
-                    textColor = 'white'
-                    buttonBackground = 'black hover:bg-white'
-                    buttonTextColor = 'white hover:text-black'
+                    textColor = 'text-white'
+                    buttonBackground = 'bg-black hover:bg-white'
+                    buttonTextColor = 'text-white hover:text-black'
                     tag = 'Most Popular'
                     title = 'Personal'
-                    titleColor='white'
+                    titleColor='text-white'
                     price = '$3/mo.'
                     description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic accusamus odio, incidunt rerum ex iste praesentium? Expedita.'
                     button = 'Sign up today'
                     dropdownTitle = "What's included"
-                    dropdownTitleColor = 'white'
+                    dropdownTitleColor = 'text-white'
                     dropdownContent = {
                     <> <div >
                         <div className="grid">
@@ -200,19 +200,19 @@ export default function Cards() {
                     
                     />
                     <Card 
-                    backgroundColor  = 'white border border-gray-200 shadow-sm'
-                    tagColor = 'lime-500 text-white'
-                    textColor = 'black'
-                    buttonBackground = 'black hover:bg-lime-500'
-                    buttonTextColor = 'white hover:text-black hover:font-semibold'
+                    backgroundColor  = 'bg-white border border-gray-200 shadow-sm'
+                    tagColor = 'bg-lime-500 text-white'
+                    textColor = 'text-black'
+                    buttonBackground = 'bg-black hover:bg-lime-500'
+                    buttonTextColor = 'text-white hover:text-black hover:font-semibold'
                     tag = 'Best value'
                     title = 'Family'
-                    titleColor='black'
+                    titleColor='text-black'
                     price = '$3/mo.'
                     description = 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias hic accusamus odio, incidunt rerum ex iste praesentium? Expedita.'
                     button = 'Sign up today'
                     dropdownTitle = "What's included"
-                    dropdownTitleColor = 'black'
+                    dropdownTitleColor = 'text-black'
                     dropdownContent = {
                     <> 
                     <div >
