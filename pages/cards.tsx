@@ -38,7 +38,7 @@ export default function Cards() {
                             dropdownContent={
                                 <> <div >
                                     <div className="grid">
-                                        <div className="text-gray-300 font-light pr-16 md:pr-0 mt-4 inline-flex items-center justify-between">
+                                        <div className="text-gray-300 font-light md:pr-0 mt-4 inline-flex items-center justify-between z-30">
                                             <div className='inline-flex w-full items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -111,7 +111,7 @@ export default function Cards() {
                                     <div >
                                         <div className="grid">
 
-                                        <div className="text-gray-300 font-light pr-16 md:pr-0 mt-4 inline-flex items-center justify-between">
+                                        <div className="text-gray-300 font-light  md:pr-0 mt-4 inline-flex items-center justify-between">
                                             <div className='inline-flex w-full items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -183,7 +183,7 @@ export default function Cards() {
                                     <div >
                                         <div className="grid">
 
-                                        <div className="text-gray-300 font-light pr-16 md:pr-0 mt-4 inline-flex items-center justify-between">
+                                        <div className="text-gray-300 font-light md:pr-0 mt-4 inline-flex items-center justify-between">
                                             <div className='inline-flex w-full items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -276,7 +276,7 @@ export default function Cards() {
                                 <>
                                     <div >
                                         <div className="grid">
-                                        <div className="text-black font-light pr-16 md:pr-0 mt-4 inline-flex items-center justify-between">
+                                        <div className="text-black font-light  md:pr-0 mt-4 inline-flex items-center justify-between">
                                             <div className='inline-flex w-full items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -349,7 +349,7 @@ export default function Cards() {
                                     <div >
                                         <div className="grid">
 
-                                        <div className="text-black font-light pr-16 md:pr-0 mt-4 inline-flex items-center justify-between">
+                                        <div className="text-black font-light  md:pr-0 mt-4 inline-flex items-center justify-between">
                                             <div className='inline-flex w-full items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -421,7 +421,7 @@ export default function Cards() {
                                     <div >
                                         <div className="grid">
 
-                                        <div className="text-black font-light pr-16 md:pr-0 mt-4 inline-flex items-center justify-between">
+                                        <div className="text-black font-light md:pr-0 mt-4 inline-flex items-center justify-between">
                                             <div className='inline-flex w-full items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
