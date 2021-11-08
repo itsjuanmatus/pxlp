@@ -21,7 +21,7 @@ export default function Cards() {
                    <div className="mt-10 md:mt-0 grid place-content-center gap-y-5 md:inline-flex md:space-x-5 w-full justify-center">
                    <Card 
                     backgroundColor  = 'bg-purple-700 border border-gray-200 shadow-sm'
-                    tagColor = 'white text-black'
+                    tagColor = 'bg-white text-black'
                     textColor = 'text-white'
                     buttonBackground = 'bg-black hover:bg-white'
                     buttonTextColor = 'text-white hover:text-black'
