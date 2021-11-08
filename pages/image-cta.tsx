@@ -1,11 +1,12 @@
 import React from 'react'
 
+
 export default function ImageCTA() {
     return (
         <div className="flex-col min-h-screen w-full bg-white py-10 px-10 m-auto">
-            <div className="grid md:grid-cols-2 place-content-center gap-y-7 place-items-center">
+            <div className="grid md:grid-cols-2 place-content-center md:gap-x-16 gap-y-7 place-items-center">
                 <div
-                    className='flex justify-center p-6 bg-blue-200 border border-dashed border-black max-w-2xl lg:order-last'
+                    className='flex justify-center p-6 bg-blue-200 border border-dashed border-black max-w-2xl md:order-last'
                 >
                     <img
                         className='object-cover'
