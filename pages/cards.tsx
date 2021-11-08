@@ -13,7 +13,7 @@ export default function Cards() {
         <div className="flex-col bg-white w-full min-h-screen m-auto">
             <div className="grid w-full place-content-center py-16 gap-y-8 px-3">
                 <div className='grid md:inline-flex m-auto justify-between w-full'>
-                    <div className='grid gap-y-5 md:gap-y-0 justify-items-center md:place-content-start md:justify-items-start px-10 md:px-8 z-50'>
+                    <div className='grid gap-y-5 md:gap-y-0 justify-items-center md:place-content-start md:justify-items-start px-10 md:px-8 z-50 md:max-w-xs lg:max-w-2xl'>
                         <h3 className="text-center md:text-left">UP-FRONT PRICING</h3>
                         <h2 className="text-center text-4xl md:text-left lg:text-6xl">Simple,  transparent, plans.</h2>
                         <p className='text-center md:text-left md:mt-10 md:pr-18'>
@@ -38,14 +38,14 @@ export default function Cards() {
                             dropdownContent={
                                 <> <div >
                                     <div className="grid">
-                                        <div className="text-gray-300 font-light md:pr-0 mt-4 inline-flex items-center justify-between z-30">
-                                            <div className='inline-flex w-full items-center space-x-2'>
+                                        <div className="text-gray-300 font-light mt-4 inline-flex items-center justify-between w-full ">
+                                            <div className='inline-flex w-full max-w-min items-center space-x-2'>
                                                 <span>
                                                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                                                     </svg>
                                                 </span>
-                                                <span className="font-semibold">Investing</span>
+                                                <span className="font-semibold max-w-min">Investing</span>
                                             </div>
                                             <div>
                                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 stroke-current text-gray-300" viewBox="0 0 20 20" fill="currentColor">

@@ -26,7 +26,7 @@ export default function Card({
     const size = useWindowSize();
 
     return (
-        <div className={`${backgroundColor} shadow-sm grid w-full py-6 px-10 rounded-3xl max-w-sm`}>
+        <div className={`${backgroundColor} shadow-sm grid w-full py-6 px-10 rounded-3xl max-w-sm min-w-sm`}>
             <div className="flex justify-end">
                 <span className={`${tagColor} py-1 px-4 max-w-max w-full rounded-3xl text-sm font-semibold max-h-8 inline-flex items-center`}>{tag}</span>
             </div>
