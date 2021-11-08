@@ -3,7 +3,7 @@ import React from 'react'
 export default function IconCard({title, description, icon}:any) {
     return (
         <div className="bg-white shadow-sm border border-gray-200 grid items-start rounded-xl p-6 gap-y-2">
-            <div className="text-truegray-700 max-w-xs">
+            <div className="text-truegray-700 max-w-xs max-h-16">
                 {icon}
             </div>
             <h3 className='text-lg font-semibold text-truegray-700'>
