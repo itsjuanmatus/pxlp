@@ -6,7 +6,7 @@ export default function CTA({ title, description, button, desktopOrder = 'last',
     return (
         <div className="grid md:grid-cols-2 place-content-center gap-y-7 place-items-center">
             <div
-                className={`flex justify-center p-6 bg-blue-200 border border-dashed border-black max-w-2xl order-${mobileOrder} md:order-${desktopOrder}`}
+                className={`flex justify-center p-6 bg-blue-200 border border-dashed border-black max-w-2xl ${mobileOrder} ${desktopOrder}`}
             >
                 <img
                     className='object-cover'
