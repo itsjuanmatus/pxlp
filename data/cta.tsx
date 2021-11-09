@@ -6,5 +6,5 @@ export const cta = [{
     image: 'https://images.pexels.com/photos/5063442/pexels-photo-5063442.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260',
     mobileOrder: 'order-first',
     desktopOrder: 'md:order-last',
-
+    dark: false,
 }]
