@@ -13,7 +13,6 @@ export default function DoubleImage() {
                         Sign up today
                     </button>
                     <img className=' md:hidden w-80' src="./charizard.png" alt="" />
-
                 </div>
             </div>
 
