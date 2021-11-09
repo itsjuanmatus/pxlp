@@ -121,7 +121,7 @@ const Carousel = ({ children }: any) => {
         </div>
         <div className='banner'>
           <div
-            className="inner"
+            className="inner whitespace-nowrap"
             style={{ transform: `translateX(-${activeIndex * 100}%)` }}
           >
             {React.Children.map(children, (child, index) => {
