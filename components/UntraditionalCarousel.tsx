@@ -8,6 +8,7 @@ import {
     useMotionValue
 } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import ReactScrollWheelHandler from "react-scroll-wheel-handler";
 
 export const CarouselItem = ({ children, width }: any) => {
     return (
@@ -24,21 +25,19 @@ const UntraditionalCarousel = ({ children, titles = [] }: any) => {
 
     //framer-motion
     const { scrollY } = useViewportScroll();
-    const y1 = useTransform(scrollY, [0, 400], [0, 100]);
-    const y2 = useTransform(scrollY, [0, 500], [-100, 0]);
+    const y1 = useTransform(scrollY, [0, -400], [0, 0]);
+    const y2 = useTransform(scrollY, [0, -500], [-100, 0]);
 
     const [ref, inView, entry] = useInView({
         /* Optional options */
-        threshold: 0.5,
+        threshold: 1,
         triggerOnce: false
     });
 
     const variants = {
-        visible: { opacity: 1, scale: 1, y: 0 },
+        visible: { opacity: 1 },
         hidden: {
-            opacity: 0,
-            scale: 0.65,
-            y: 50
+            opacity: 0.5,
         }
     };
 
@@ -79,82 +78,85 @@ const UntraditionalCarousel = ({ children, titles = [] }: any) => {
         onSwipedRight: () => updateIndex(activeIndex - 1)
     });
 
+
     return (
-        <div className='grid '>
-
-            <div className="md:hidden flex items-center w-full justify-center space-x-10 mt-5">
-
-            </div>
-            <div
-                {...handlers}
-                className="carousel-2 grid place-content-center"
-                onMouseEnter={() => setPaused(true)}
-                onMouseLeave={() => setPaused(false)}
-            >
-                <div className='grid relative place-content-center place-items-center z-10'>
-                    <div
-                        className="inner whitespace-nowrap z-10"
-                        style={{ transform: `translateX(-${activeIndex * 100}%)` }}
-                    >
-                        {React.Children.map(children, (child, index) => {
-                            return React.cloneElement(child, { width: "100%" });
-                        })}
-                    </div>
-                    <div className='absolute grid md:grid-cols-3 place-items-end md:place-items-center md:place-content-center gap-y-56'>
-
-                        <div className="rounded-full order-last md:order-none border border-gray-500 flex max-w-min z-50 p-10 py-16 self-end -ml-10 md:-mb-10 lg:-mb-0">
-                            <button
-                                onClick={() => {
-                                    updateIndex(activeIndex - 1);
-                                }}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 p-3 stroke-current text-white hover:text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
-                                </svg>
-                            </button>
-                            <button
-                                onClick={() => {
-                                    updateIndex(activeIndex + 1);
-                                }}
-                            >
-                                <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12  p-3 stroke-current text-white hover:text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                                </svg>
-                            </button>
-                        </div>
-
-                        <motion.img
-                            animate={inView ? 'visible' : 'hidden'}
-                            variants={variants}
-                            transition={{ duration: 4, ease: 'easeOut' }}
-                            ref={ref}
-                            className='mt-16 z-0 -mr-44 md:-mr-0'
-                            style={{
-                                minWidth: `${size.width <= 768 ? '24rem' : '22rem'}`,
-                                height: `${size.width <= 768 ? '30rem' : '35rem'}`,
-                                objectFit: 'cover',
-                                backgroundColor: 'rgba(0, 0, 0, .6)',
-                                borderRadius: '100rem',
-                            }} src="https://images.unsplash.com/photo-1591054333829-3a3ce5d57fca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80" alt=""
-                        />
-                        <div className="hidden transform self-center -rotate-90 md:inline-flex items-center space-x-5">
-                            <p className="text-white">1</p>
-                            <div className="overflow-hidden h-1 text-xs flex rounded bg-truegray-500 opacity-75 w-32">
-                                <div style={{ width: `${((activeIndex + 1) / titles.length) * 100}%` }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-white"></div>
-                            </div>
-                            <p className="text-white">{titles.length}</p>
-
-                        </div>
-
-                    </div>
-
+        <ReactScrollWheelHandler
+            upHandler={(e) => updateIndex(activeIndex - 1)}
+            downHandler={(e) => updateIndex(activeIndex + 1)}
+            // @ts-ignore
+            wheelConfig={[7, 100, 0.5]}
+        >
+            <div className='grid'>
+                <div className="md:hidden flex items-center w-full justify-center space-x-10 mt-5">
                 </div>
 
+                <div
+                    {...handlers}
+                    className="carousel-2 grid place-content-center"
+                    style={{ top: '96rem' }}
 
+                >
+                    <div className='grid relative place-content-center place-items-center z-10'>
+                        <div
+                            className="inner whitespace-nowrap z-10"
+                            style={{ transform: `translateX(-${activeIndex * 100}%)` }}
+                        >
+                            {React.Children.map(children, (child, index) => {
+                                return React.cloneElement(child, { width: "100%" });
+                            })}
+                        </div>
+                        <div className='absolute grid md:grid-cols-3 place-items-end md:place-items-center md:place-content-center gap-y-56'>
 
+                            <div className="rounded-full order-last md:order-none border border-gray-500 flex max-w-min z-50 p-10 py-16 self-end -mr-16 md:-mr-0 md:-mb-10 lg:-mb-0">
+                                <button
+                                    onClick={() => {
+                                        updateIndex(activeIndex - 1);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12 p-3 stroke-current text-white hover:text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                                    </svg>
+                                </button>
+                                <button
+                                    onClick={() => {
+                                        updateIndex(activeIndex + 1);
+                                    }}
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-12  p-3 stroke-current text-white hover:text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                                    </svg>
+                                </button>
+                            </div>
 
-            </div>
-        </div >
+                            <motion.img
+                                animate={inView ? 'visible' : 'hidden'}
+                                transition={{ duration: 2, ease: 'easeOut' }}
+                                ref={ref}
+                                className='mt-16 -mb-36 md:-mb-0 z-0 -mr-44 md:-mr-0'
+                                style={{
+                                    minWidth: `${size.width <= 768 ? '24rem' : '22rem'}`,
+                                    height: `${size.width <= 768 ? '30rem' : '40rem'}`,
+                                    objectFit: 'cover',
+                                    backgroundColor: 'rgba(0, 0, 0, .6)',
+                                    borderRadius: '100rem',
+                                    y: y2,
+                                }} src="https://images.unsplash.com/photo-1591054333829-3a3ce5d57fca?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1364&q=80" alt=""
+                            />
+                            <div className="hidden transform self-center -rotate-90 md:inline-flex items-center space-x-5">
+                                <p className="text-white">1</p>
+                                <div className="overflow-hidden h-1 text-xs flex rounded bg-truegray-500 opacity-75 w-32">
+                                    <div style={{ width: `${((activeIndex + 1) / titles.length) * 100}%` }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-white"></div>
+                                </div>
+                                <p className="text-white">{titles.length}</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div >
+        </ReactScrollWheelHandler>
+
     );
 };
 
