@@ -1,7 +1,13 @@
 import { title } from "process";
 import React, { useEffect, useState } from "react";
 import { useSwipeable } from "react-swipeable";
-
+import {
+    useViewportScroll,
+    motion,
+    useTransform,
+    useMotionValue
+} from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 
 export const CarouselItem = ({ children, width }: any) => {
     return (
@@ -12,8 +18,35 @@ export const CarouselItem = ({ children, width }: any) => {
 };
 
 const UntraditionalCarousel = ({ children, titles = [] }: any) => {
+
+
+
+
+    //framer-motion
+    const { scrollY } = useViewportScroll();
+    const y1 = useTransform(scrollY, [0, 400], [0, 100]);
+    const y2 = useTransform(scrollY, [0, 500], [-100, 0]);
+
+    const [ref, inView, entry] = useInView({
+        /* Optional options */
+        threshold: 0.5,
+        triggerOnce: false
+    });
+
+    const variants = {
+        visible: { opacity: 1, scale: 1, y: 0 },
+        hidden: {
+            opacity: 0,
+            scale: 0.65,
+            y: 50
+        }
+    };
+
+    //indexes logic
     const [activeIndex, setActiveIndex] = useState(0);
     const [paused, setPaused] = useState(false);
+
+    //window size
     const size = useWindowSize();
 
 
@@ -23,10 +56,10 @@ const UntraditionalCarousel = ({ children, titles = [] }: any) => {
         } else if (newIndex >= React.Children.count(children)) {
             newIndex = 0;
         }
-
         setActiveIndex(newIndex);
     };
 
+    // autoplay
     /** useEffect(() => {
       const interval = setInterval(() => {
         if (!paused) {
@@ -45,10 +78,6 @@ const UntraditionalCarousel = ({ children, titles = [] }: any) => {
         onSwipedLeft: () => updateIndex(activeIndex + 1),
         onSwipedRight: () => updateIndex(activeIndex - 1)
     });
-
-
-
-
 
     return (
         <div className='grid '>
@@ -73,7 +102,7 @@ const UntraditionalCarousel = ({ children, titles = [] }: any) => {
                     </div>
                     <div className='absolute grid md:grid-cols-3 place-items-end md:place-items-center md:place-content-center gap-y-56'>
 
-                        <div className="rounded-full order-last md:order-none border border-gray-500 flex max-w-min z-50 p-10 py-16 self-end -ml-8 md:-mb-10 lg:-mb-0">
+                        <div className="rounded-full order-last md:order-none border border-gray-500 flex max-w-min z-50 p-10 py-16 self-end -ml-10 md:-mb-10 lg:-mb-0">
                             <button
                                 onClick={() => {
                                     updateIndex(activeIndex - 1);
@@ -93,7 +122,12 @@ const UntraditionalCarousel = ({ children, titles = [] }: any) => {
                                 </svg>
                             </button>
                         </div>
-                        <img
+
+                        <motion.img
+                            animate={inView ? 'visible' : 'hidden'}
+                            variants={variants}
+                            transition={{ duration: 4, ease: 'easeOut' }}
+                            ref={ref}
                             className='mt-16 z-0 -mr-44 md:-mr-0'
                             style={{
                                 minWidth: `${size.width <= 768 ? '24rem' : '22rem'}`,
