@@ -2,7 +2,10 @@ import React from 'react'
 
 export default function IconCard({title, description, icon}:any) {
     return (
-        <div className="bg-white shadow-sm border border-gray-200 grid items-start rounded-xl p-6 gap-y-2">
+        <div className="special p-5">
+        <div className="bg-white shadow-sm border border-gray-200 grid items-start rounded-xl p-6 gap-y-2 " 
+        style={{width: '100%'}}
+        >
             <div className="text-truegray-700 w-8">
                 {icon}
             </div>
@@ -13,5 +16,7 @@ export default function IconCard({title, description, icon}:any) {
                 {description}
             </p>
         </div>
+        </div>
+
     )
 }

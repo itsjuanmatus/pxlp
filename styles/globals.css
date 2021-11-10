@@ -2,13 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Butterfly+Kids&display=swap");
 
 .kids-font {
-  font-family: 'Butterfly Kids', cursive;
+  font-family: "Butterfly Kids", cursive;
 }
 
-
+.special {
+  flex: 0 0 33.3333%;
+}
 .accordion svg.toggle[aria-expanded="true"] {
   transform: rotateZ(90deg);
 }
@@ -22,19 +24,18 @@
   transition: max-height 2s ease-in-out;
 }
 
-
 .carousel {
   display: inline-flex;
   overflow-x: hidden;
-/*  scroll snap is a great feature which will center the image on snap on touch screen devices  */
-/* all below will hide the scrollbar on all browsers.    */
+  /*  scroll snap is a great feature which will center the image on snap on touch screen devices  */
+  /* all below will hide the scrollbar on all browsers.    */
   -webkit-overflow-scrolling: touch;
   scrollbar-width: none; /* For Firefox */
   -ms-overflow-style: none; /* For Internet Explorer and Edge */
 }
 
 .banner {
-  background-image: url('../public/Metapod.png');
+  background-image: url("../public/Metapod.png");
   height: 100%;
   background-position: center;
   background-repeat: no-repeat;
@@ -57,8 +58,6 @@
   height: 200px;
   color: #fff;
 }
-
-
 
 .indicators > button {
   margin: 5px;
