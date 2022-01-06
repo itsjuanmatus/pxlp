@@ -1,9 +1,7 @@
-import React, { useEffect, useState } from 'react'
-import Accordion from '../components/Accordion'
-import Card from '../components/Card'
-import ReactTooltip from "react-tooltip";
-import CardTitle from '../components/CardTitle';
+import React from 'react';
+import Card from '../components/Card';
 import CardItem from '../components/CardItem';
+import CardTitle from '../components/CardTitle';
 import CardLayout from '../components/Layout/CardLayout';
 
 

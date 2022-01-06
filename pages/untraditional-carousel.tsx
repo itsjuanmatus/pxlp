@@ -1,12 +1,10 @@
-import React from 'react'
-import UntraditionalCarousel, { CarouselItem } from '../components/UntraditionalCarousel'
 import {
-    useViewportScroll,
     motion,
-    useTransform,
-    useMotionValue
+    useTransform, useViewportScroll
 } from 'framer-motion';
+import React from 'react';
 import { useInView } from 'react-intersection-observer';
+import UntraditionalCarousel, { CarouselItem } from '../components/UntraditionalCarousel';
 
 
 

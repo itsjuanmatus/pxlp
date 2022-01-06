@@ -1,4 +1,4 @@
-import React, { useState, createRef } from 'react'
+import React, { createRef, useState } from 'react'
 const images = [
     '/iphone1.png',
     '/squirtle.png',
@@ -6,7 +6,6 @@ const images = [
     '/charizard.png',
 ]
 
-import img from '../public/Ellipse.png'
 
 export default function Carousel() {
     // index of current image in state
